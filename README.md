@@ -1,7 +1,8 @@
 # petVAE
-Amyloid positron emission tomography (PET) scans are used to define amyloid-β (Aβ) accumulation, the core biomarker of Alzheimer’s disease (AD).  Typically, individuals are classified as either Aβ-negative or Aβ-positive. However, we developed the model, petVAE, that is able to reconstruct PET scans without prior labeling or pre-selection based on scanner type or region of interest. It is also extracting latent features that effectively represented the AD continuum and defined biologically meaningful clusters. 
+Amyloid positron emission tomography (PET) scans are used to define amyloid-β (Aβ) accumulation, the core biomarker of Alzheimer’s disease (AD).  Typically, individuals are classified as either Aβ-negative or Aβ-positive. However, we developed the model, petVAE, which latent features effectively represent the AD continuum and defined biologically meaningful clusters. Based on petVAE latent features we were able to definde subgroups of Aβ-negative or Aβ-positive individuals that are differ by genetic risk allell, AD biomarkers level or cognitive performence.
 
 # About the model (in process)
+![plot](petVAE_architecture.png)
 ArcheD contains 35 layers and approximately 10.7 millions of parameters. 
 
 Input: Amyloid PET scans with dimensions 160x160x96 ([same to 'CO-REG, AVG, STANDARDIZED IMAGE AND VOXEL SIZE' processing step of ADNI dataset](https://adni.loni.usc.edu/methods/pet-analysis-method/pet-analysis/))
@@ -18,7 +19,6 @@ Batch size: 4
 
 For increasing the training set size we used augmentation approach. We applied either gaussian noise (σ=0,5,10,15,20,25%) or flipped images by X or Y axes with equal probability.
 
-![plot](arched_architechture.png)
 
 
 # How to use the model
