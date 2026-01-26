@@ -3,9 +3,10 @@ Amyloid positron emission tomography (PET) scans are used to define amyloid-β (
 
 # About the model (in process)
 ![plot](petVAE_architecture.png)
-ArcheD contains 35 layers and approximately 10.7 millions of parameters. 
+The petVAE is a 2D convolutional variational autoencoder that contains 1.10 million parameters. 
 
-Input: Amyloid PET scans with dimensions 160x160x96 ([same to 'CO-REG, AVG, STANDARDIZED IMAGE AND VOXEL SIZE' processing step of ADNI dataset](https://adni.loni.usc.edu/methods/pet-analysis-method/pet-analysis/))
+Input:
+The model was trained on [18F]-AV45 (Florbetapir) Amyloid PET scans pre-registered to correspondant MRI and T1 MNI152 template with dimensions 182×218×182 voxels. For best performances it's recommended to use the same registration template and dimensions of the input PET scan. However, due to padding stage of the model it can operate on scans with axial size smaller than 256x256 (PET scan size < 256x256x[anything])
 
 Activation function: ReLU
 
