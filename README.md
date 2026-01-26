@@ -3,16 +3,18 @@ Amyloid positron emission tomography (PET) scans are used to define amyloid-β (
 
 # About the model (in process)
 ![plot](petVAE_architecture.png)
-The petVAE is a 2D convolutional variational autoencoder that contains 1.10 million parameters. 
+The petVAE is a 2D convolutional variational autoencoder (ref) that contains 1.10 million parameters. 
 
 Input:
-The model was trained on [18F]-AV45 (Florbetapir) Amyloid PET scans pre-registered to correspondant MRI and T1 MNI152 template with dimensions 182×218×182 voxels. For best performances it's recommended to use the same registration template and dimensions of the input PET scan. However, due to padding stage of the model it can operate on scans with axial size smaller than 256x256 (PET scan size < 256x256x[anything])
 
-Activation function: ReLU
+The model was trained on [¹⁸F]-AV45 (florbetapir) amyloid PET scans that were pre-registered to the corresponding MRI and to the T1 MNI152 template, with dimensions of 182 × 218 × 182 voxels. For optimal performance, it is recommended to use the same registration template and input dimensions for PET scans. However, due to the model’s internal padding stage, it can also operate on scans with axial slice dimensions smaller than 256 × 256 (i.e., PET scan size < 256 × 256 × n).
 
-Optimization: Adam optimization algorithm (Kingma & Ba, 2014) with an initial learning rate of 0.0001
+Activation function: ReLU and LeakyReLU (ref)
 
-Evaluation metrics: mean squared error (MSE)
+Optimization: Adam optimization algorithm (Kingma & Ba, 2014) with an initial learning rate of 0.00001
+
+Evaluation metrics: Combination Mean Squared Error (MSE) and Kullback–Leibler Divergence (KLD) losses with β = 0.00001 
+![plot](petvae_loss.png)
 
 Number of epochs: maximum of 150 epochs and stopped early, if loss in the validation dataset did not decrease for 15 epochs 
 
