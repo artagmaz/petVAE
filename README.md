@@ -36,6 +36,10 @@ Preprint of the manuscript with results is available on [BioRxiv](https://will b
 
 # References
 Kingma DP, Welling M. An Introduction to Variational Autoencoders. arXiv [cs.LG]. 2019. Available: http://arxiv.org/abs/1906.02691
+
 Kingma DP, Ba J. Adam: A Method for Stochastic Optimization. 2014. Available: http://arxiv.org/abs/1412.6980
+
 Nair V, Hinton GE. Rectified linear units improve restricted boltzmann machines. Proceedings of the 27th international conference on machine learning (ICML-10). 2010.
+
 Maas AL, Awni Y, Hannun AY. Rectifier nonlinearities improve neural network acoustic models. Proc icml. 2013;30.
+
