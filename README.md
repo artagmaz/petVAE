@@ -3,13 +3,13 @@ Amyloid positron emission tomography (PET) scans are used to define amyloid-β (
 
 # About the model (in process)
 ![plot](petVAE_architecture.png)
-The petVAE is a 2D convolutional variational autoencoder (ref) that contains 1.10 million parameters. 
+The petVAE is a 2D convolutional variational autoencoder (Kingma & Welling, 2019) that contains 1.10 million parameters. 
 
 Input:
 
 The model was trained on [¹⁸F]-AV45 (florbetapir) amyloid PET scans that were pre-registered to the corresponding MRI and to the T1 MNI152 template, with dimensions of 182 × 218 × 182 voxels. For optimal performance, it is recommended to use the same registration template and input dimensions for PET scans. However, due to the model’s internal padding stage, it can also operate on scans with axial slice dimensions smaller than 256 × 256 (i.e., PET scan size < 256 × 256 × n).
 
-Activation function: ReLU and LeakyReLU (ref)
+Activation function: ReLU (Nair & Hinton, 2010) and LeakyReLU (Maas et al., 2013)
 
 Optimization: Adam optimization algorithm (Kingma & Ba, 2014) with an initial learning rate of 0.00001
 
@@ -32,3 +32,10 @@ Arina A. Tagmazian, Claudia Schwarz, Catharina Lange, Esa Pitkänen, Eero Vuoksi
 Data used for training and evaluation the model were obtained from the Alzheimer’s Disease Neuroimaging Initiative (ADNI) and Anti-Amyloid Treatment in Asymptomatic Alzheimer's Disease (A4/LEARN) studies. 
 
 Preprint of the manuscript with results is available on [BioRxiv](https://will be here later). 
+
+
+# References
+Kingma DP, Welling M. An Introduction to Variational Autoencoders. arXiv [cs.LG]. 2019. Available: http://arxiv.org/abs/1906.02691
+Kingma DP, Ba J. Adam: A Method for Stochastic Optimization. 2014. Available: http://arxiv.org/abs/1412.6980
+Nair V, Hinton GE. Rectified linear units improve restricted boltzmann machines. Proceedings of the 27th international conference on machine learning (ICML-10). 2010.
+Maas AL, Awni Y, Hannun AY. Rectifier nonlinearities improve neural network acoustic models. Proc icml. 2013;30.
