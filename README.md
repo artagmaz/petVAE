@@ -14,7 +14,7 @@ Activation function: ReLU (Nair & Hinton, 2010) and LeakyReLU (Maas et al., 2013
 Optimization: Adam optimization algorithm (Kingma & Ba, 2014) with an initial learning rate of 0.00001
 
 Evaluation metrics: Combination Mean Squared Error (MSE) and Kullback–Leibler Divergence (KLD) losses with β = 0.00001 
-![plot](petvae_loss.png)
+<img src="petvae_loss.png" width="700">
 
 Number of epochs: maximum of 300 epochs and stopped early, if loss in the validation dataset did not decrease for 10 epochs 
 
